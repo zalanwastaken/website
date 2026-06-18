@@ -54,12 +54,15 @@ http.createServer((req, res) => {
 
         // 🚀 deploy logic
         exec(`
-            if [ -d "${DIR}/.git" ]; then
-                cd ${DIR} && git pull
+            if [ -d "${REPO_DIR}/.git" ]; then
+                cd ${REPO_DIR} && git pull
             else
-                rm -rf ${DIR}/*
-                git clone ${REPO} ${DIR}
+                rm -rf ${REPO_DIR}
+                git clone ${REPO} ${REPO_DIR}
             fi
+
+            rm -rf ${DIR}/*
+            cp -r ${REPO_DIR}/src/website/. ${DIR}/
         `, (err, stdout, stderr) => {
             if (err) {
                 console.error("deploy failed 😭", err)
