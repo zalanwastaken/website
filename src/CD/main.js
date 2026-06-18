@@ -1,7 +1,10 @@
 const http = require("http")
 const crypto = require("crypto")
+const { exec } = require("child_process")
 
-const SECRET = "super_secret_owo_key"
+const SECRET = "super_secret_owo_key" //! CHANGE TO KEY
+const REPO = "https://github.com/zalanwastaken/website.git" //! CHANGE TO REPO
+const DIR = "/var/www/html"
 
 function verifySignature(sig, body) {
     const hmac = crypto
@@ -20,13 +23,10 @@ function verifySignature(sig, body) {
 http.createServer((req, res) => {
     let chunks = []
 
-    req.on("data", chunk => {
-        chunks.push(chunk)
-    })
+    req.on("data", chunk => chunks.push(chunk))
 
     req.on("end", () => {
-        const rawBody = Buffer.concat(chunks) // 👈 THIS IS THE REAL BODY
-
+        const rawBody = Buffer.concat(chunks)
         const sig = req.headers["x-hub-signature-256"]
 
         if (!verifySignature(sig, rawBody)) {
@@ -34,9 +34,43 @@ http.createServer((req, res) => {
             return res.end("nope >:(")
         }
 
-        console.log("VALID REQUEST LETS GOOOO 🔥")
+        const event = req.headers["x-github-event"]
 
-        res.end("ok")
+        // 🧃 handle ping
+        if (event === "ping") {
+            console.log("ping owo")
+            return res.end("pong")
+        }
+
+        // 🧠 parse payload
+        const payload = JSON.parse(rawBody.toString())
+
+        if (payload.ref !== "refs/heads/main") {
+            console.log("not main, skipping")
+            return res.end("skip")
+        }
+
+        console.log("DEPLOY TIME 🔥")
+
+        // 🚀 deploy logic
+        exec(`
+            if [ -d "${DIR}/.git" ]; then
+                cd ${DIR} && git pull
+            else
+                rm -rf ${DIR}/*
+                git clone ${REPO} ${DIR}
+            fi
+        `, (err, stdout, stderr) => {
+            if (err) {
+                console.error("deploy failed 😭", err)
+                return res.end("fail")
+            }
+
+            console.log(stdout)
+            console.error(stderr)
+
+            res.end("deployed 🚀")
+        })
     })
 
 }).listen(3008)
