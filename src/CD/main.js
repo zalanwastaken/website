@@ -5,7 +5,7 @@ const { exec } = require("child_process")
 const SECRET = "super_secret_owo_key" //! CHANGE TO KEY
 const REPO = "https://github.com/zalanwastaken/website.git" //! CHANGE TO REPO
 const DIR = "/var/www/html"
-const REPO_DIR = "dir"
+const REPO_DIR = "dir" //! change to dir
 
 function verifySignature(sig, body) {
     const hmac = crypto
