@@ -73,6 +73,8 @@ http.createServer((req, res) => {
             console.log(stdout)
             console.error(stderr)
 
+            console.log("DONE !")
+
             res.end("deployed 🚀")
         })
     })
