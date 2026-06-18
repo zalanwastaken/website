@@ -1,0 +1,23 @@
+body{
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    color: white;
+    background-color: black;
+    background-attachment: fixed;
+}
+#main{
+    margin: 8px;
+    border-radius: 10px;
+    position: absolute;
+    height: auto;
+    width: 70vw;
+    left: 26vw;
+    top: 0;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.75);
+    z-index: 5;
+}
+
+#main h3 {
+    text-align: center;
+}
