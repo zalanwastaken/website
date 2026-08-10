@@ -1,5 +1,5 @@
 #anim{
-    background-color: white;
+    background-color: black;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -12,6 +12,7 @@
 
 .animcontents{
     opacity: inherit;
-    color: black;
+    color: white;
+    background-color: black;
     position: absolute;
 }

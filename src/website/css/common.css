@@ -1,7 +1,7 @@
 body{
     background-image: url("../assets/background.jpg");
     background-size: cover;
-    color: white;
+    color: black;
     background-color: black;
     background-attachment: fixed;
 }
@@ -10,11 +10,11 @@ body{
     border-radius: 10px;
     position: absolute;
     height: auto;
-    width: 70vw;
+    width: 72vw;
     left: 26vw;
     top: 0;
-    color: black;
-    background-color: rgb(255, 255, 255, 0.75);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 5;
 }
 
