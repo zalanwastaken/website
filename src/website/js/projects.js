@@ -78,6 +78,6 @@ const descriptions = [
     "Welcome to the rabbit hole."
 ];
 
-document.querySelectorAll('.project p').forEach((el) => {
-    el.innerHTML += "<br><i>" + descriptions[Math.floor(Math.random() * descriptions.length)] + "</i>";
+document.querySelectorAll('.project').forEach((el) => {
+    el.innerHTML += "<div class='hero-tag'><i>" + descriptions[Math.floor(Math.random() * descriptions.length)] + "</i></div>";
 });
