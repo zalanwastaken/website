@@ -4,20 +4,6 @@
     text-align: center;
 }
 
-/* Glitch effect on hover */
-.project:hover {
-    animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(2px, -2px); }
-    60% { transform: translate(-2px, -2px); }
-    80% { transform: translate(2px, 2px); }
-    100% { transform: translate(0, 0); }
-}
-
 /* Style for project items */
 .project {
     background: rgba(255, 255, 255, 0.1);
@@ -28,5 +14,5 @@
 }
 
 .project:hover {
-    background: rgba(255, 0, 0, 0.3); /* Subtle red tint for cursed effect */
+    background: gray; /* Subtle red tint for cursed effect */
 }
