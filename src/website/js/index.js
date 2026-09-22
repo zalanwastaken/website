@@ -73,37 +73,43 @@ const quotes = [
     "If your CPU is at 100%, you’re either running an intensive algorithm or a Chrome tab."
 ];
 
-document.querySelectorAll(".quote").forEach(el => {
-    el.innerHTML = quotes[Math.floor(Math.random() * quotes.length)]
-})
-window.scrollTo(0, 0);
-// Disable scrolling
-function disableScroll() {
-    document.body.style.overflow = "hidden";
+const params = new URLSearchParams(window.location.search);
+const intro = params.get("intro");
+if (intro === "no") {
+    document.getElementById("anim").style.display = "none";
+} else {
+    document.querySelectorAll(".quote").forEach(el => {
+        el.innerHTML = quotes[Math.floor(Math.random() * quotes.length)]
+    })
+    window.scrollTo(0, 0);
+    // Disable scrolling
+    function disableScroll() {
+        document.body.style.overflow = "hidden";
+    }
+
+    // Enable scrolling
+    function enableScroll() {
+        document.body.style.overflow = "";
+    }
+
+    disableScroll()
+
+    setTimeout(() => {
+        let box = document.getElementById("anim");
+        let opacity = 1; // Start fully visible
+
+        disableScroll(); // Disable scrolling when animation starts
+
+        let fade = setInterval(() => {
+            if (opacity <= 0) {
+                clearInterval(fade); // Stop when fully transparent
+                box.style.display = "none"; // Optional: Hide completely
+                enableScroll(); // Re-enable scrolling after fade-out
+            } else {
+                opacity -= 0.01; // Reduce opacity
+                box.style.opacity = opacity;
+            }
+        }, 30); // Adjust timing for smoothness
+
+    }, 2000);
 }
-
-// Enable scrolling
-function enableScroll() {
-    document.body.style.overflow = "";
-}
-
-disableScroll()
-
-setTimeout(() => {
-    let box = document.getElementById("anim");
-    let opacity = 1; // Start fully visible
-
-    disableScroll(); // Disable scrolling when animation starts
-
-    let fade = setInterval(() => {
-        if (opacity <= 0) {
-            clearInterval(fade); // Stop when fully transparent
-            box.style.display = "none"; // Optional: Hide completely
-            enableScroll(); // Re-enable scrolling after fade-out
-        } else {
-            opacity -= 0.01; // Reduce opacity
-            box.style.opacity = opacity;
-        }
-    }, 30); // Adjust timing for smoothness
-
-}, 2000);
