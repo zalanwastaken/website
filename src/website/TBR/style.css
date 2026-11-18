@@ -363,6 +363,14 @@ img {
     border: 1px solid var(--border);
 }
 
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
 .avatar svg {
     width: 33px;
     height: 33px;
@@ -518,6 +526,14 @@ img {
     stroke: var(--text-muted);
     stroke-width: 1.6;
     stroke-linecap: round;
+}
+
+.mentor-card__icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .mentor-card__content h3 {
