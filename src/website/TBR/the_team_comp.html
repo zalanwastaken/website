@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Team | Project</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #09090b;
+    --card: #18181b;
+    --card-hover: #27272a;
+    --border: #303034;
+    --text: #fafafa;
+    --muted: #a1a1aa;
+    --orange: #f97316;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 20px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-label {
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Hero */
+
+.hero {
+    padding: 100px 0 65px;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    letter-spacing: -4px;
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-top: 24px;
+    font-size: 15px;
+}
+
+/* Section */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    letter-spacing: -1px;
+}
+
+.member-count {
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Team grid */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding-bottom: 100px;
+}
+
+.member {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.2s ease;
+}
+
+.member:hover {
+    background: var(--card-hover);
+    border-color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    display: grid;
+    place-items: center;
+    color: var(--orange);
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.member h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.role {
+    color: var(--orange);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.member p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 65px;
+}
+
+.contribution {
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
+.contribution-label {
+    color: #71717a;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.contribution span {
+    display: inline-block;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    border-radius: 5px;
+    padding: 5px 8px;
+    color: #d4d4d8;
+    font-size: 10px;
+    margin: 3px 3px 0 0;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+    color: #71717a;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+}
+
+footer span {
+    color: var(--orange);
+}
+
+@media (max-width: 800px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 70px 0 45px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <div class="logo">PROJECT<span>.</span></div>
+        <div class="nav-label">ENGINEERING TEAM / 2026</div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="eyebrow">// THE PEOPLE BEHIND THE MACHINE</div>
+
+        <h1>Built by people.<br>
+        <span>Driven by ideas.</span></h1>
+
+        <p>
+            Behind every working system is a team of people
+            designing, building, debugging and pushing boundaries.
+            Meet the people responsible for bringing this project to life.
+        </p>
+    </section>
+
+    <section class="team">
+
+        <div class="section-heading">
+            <h2>The Team</h2>
+            <div class="member-count">TEAM MEMBERS / 00</div>
+        </div>
+
+        <div class="team-grid">
+
+            <!-- MEMBER 01 -->
+            <article class="member">
+                <div class="avatar">01</div>
+                <h3>Member Name</h3>
+                <div class="role">Project Lead</div>
+                <p>
+                    Placeholder for the member's introduction
+                    and their overall responsibilities.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Project Architecture</span>
+                    <span>Coordination</span>
+                </div>
+            </article>
+
+            <!-- MEMBER 02 -->
+            <article class="member">
+                <div class="avatar">02</div>
+                <h3>Member Name</h3>
+                <div class="role">Software Developer</div>
+                <p>
+                    Placeholder for software development,
+                    application logic and system integration.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Python</span>
+                    <span>Algorithms</span>
+                </div>
+            </article>
+
+            <!-- MEMBER 03 -->
+            <article class="member">
+                <div class="avatar">03</div>
+                <h3>Member Name</h3>
+                <div class="role">Embedded Systems Engineer</div>
+                <p>
+                    Placeholder for firmware development,
+                    microcontroller programming and communication.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Arduino</span>
+                    <span>Firmware</span>
+                </div>
+            </article>
+
+            <!-- MEMBER 04 -->
+            <article class="member">
+                <div class="avatar">04</div>
+                <h3>Member Name</h3>
+                <div class="role">Hardware Engineer</div>
+                <p>
+                    Placeholder for circuit design, wiring,
+                    electronics and hardware integration.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Circuit Design</span>
+                    <span>Electronics</span>
+                </div>
+            </article>
+
+            <!-- MEMBER 05 -->
+            <article class="member">
+                <div class="avatar">05</div>
+                <h3>Member Name</h3>
+                <div class="role">Mechanical Engineer</div>
+                <p>
+                    Placeholder for mechanical assembly,
+                    structural design and physical construction.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Assembly</span>
+                    <span>Mechanical Design</span>
+                </div>
+            </article>
+
+            <!-- MEMBER 06 -->
+            <article class="member">
+                <div class="avatar">06</div>
+                <h3>Member Name</h3>
+                <div class="role">Research & Testing</div>
+                <p>
+                    Placeholder for research, experimentation,
+                    validation and system testing.
+                </p>
+                <div class="contribution">
+                    <div class="contribution-label">Contributions</div>
+                    <span>Research</span>
+                    <span>Testing</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        ENGINEERED WITH <span>PRECISION.</span> BUILT WITH PURPOSE.
+    </div>
+</footer>
+
+</body>
+</html>
