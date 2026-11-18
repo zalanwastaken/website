@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+
+    <title>Meet the Team | [Club Name]</title>
+    <meta name="description" content="Meet the team behind [Project Name], a wireless autonomous room-mapping robot built by [Club Name].">
+
+    <link rel="icon" href="assets/arms.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="#home" class="brand">
+                <img src="assets/arms.png" alt="Coding Club at SR International School logo" class="brand__logo">
+                <span>Coding Club at SR International School</span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-links"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#team">The Team</a>
+                <a href="#contributions">Contributions</a>
+                <a href="#mentors">Mentors</a>
+                <a href="#thanks">Acknowledgements</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero section" id="home">
+            <div class="container">
+
+                <div class="hero__content reveal">
+
+                    <span class="eyebrow">
+                        <span class="eyebrow__dot"></span>
+                        BUILT BY Coding Club at SR International School
+                    </span>
+
+                    <h1>
+                        Meet the team<br>
+                        behind <span>A.R.S.S.</span>
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        The people, ideas and engineering behind our
+                        wireless autonomous room-mapping robot.
+                    </p>
+
+                    <p class="hero__description">
+                        [Short project description. Explain what the robot
+                        does, what problem it addresses and what makes
+                        the project interesting.]
+                    </p>
+
+                    <a href="#team" class="button">
+                        Meet the team
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+                <div class="hero__meta reveal">
+                    <span>ENGINEERING</span>
+                    <span class="hero__meta-divider"></span>
+                    <span>ROBOTICS</span>
+                    <span class="hero__meta-divider"></span>
+                    <span>SOFTWARE</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Team -->
+        <section class="section team-section" id="team">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">THE PEOPLE BEHIND IT</span>
+                        <h2>Meet the team.</h2>
+                    </div>
+
+                    <p>
+                        Every part of this project has people behind it.
+                        Here's who made it happen.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+
+                    <!--
+                        TEAM MEMBER CARD TEMPLATE
+
+                        To add another member:
+                        1. Copy one complete member-card article.
+                        2. Replace the name, role and bio.
+                        3. Update the social links.
+                    -->
+
+                    <article class="member-card reveal">
+                        <div class="member-card__top">
+                            <div class="avatar" aria-hidden="true">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="17" r="9"/>
+                                    <path d="M7 43c0-10 7-16 17-16s17 6 17 16"/>
+                                </svg>
+                            </div>
+                            <span class="member-card__number">01</span>
+                        </div>
+
+                        <h3>Mudit Mishra</h3>
+                        <span class="member-card__role">Project leader<br>Hardware developer<br>Programmer</span>
+
+                        <p>
+                            Led the project's development and coordinated the team's technical work.
+                            Contributed to the hardware design, system architecture, and software
+                            implementation, bringing the different components together.
+                        </p>
+
+                        <div class="member-card__links">
+                            <a href="https://github.com/zalanwastaken/" aria-label="GitHub profile of [Member Name]">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="member-card reveal">
+                        <div class="member-card__top">
+                            <div class="avatar" aria-hidden="true">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="17" r="9"/>
+                                    <path d="M7 43c0-10 7-16 17-16s17 6 17 16"/>
+                                </svg>
+                            </div>
+                            <span class="member-card__number">02</span>
+                        </div>
+
+                        <h3>Gunagya Singh</h3>
+                        <span class="member-card__role">Prompt engineer<br>FX engineer<br>Programmer</span>
+
+                        <p>
+                            Contributed to the project's programming and visual effects, helping
+                            shape how the system behaves and how its results are presented.
+                            Also worked on refining prompts and improving the overall experience.
+                        </p>
+
+                        <div class="member-card__links">
+                            <a href="https://github.com/DragonLST" aria-label="GitHub profile of [Member Name]">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="member-card reveal">
+                        <div class="member-card__top">
+                            <div class="avatar" aria-hidden="true">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="17" r="9"/>
+                                    <path d="M7 43c0-10 7-16 17-16s17 6 17 16"/>
+                                </svg>
+                            </div>
+                            <span class="member-card__number">03</span>
+                        </div>
+
+                        <h3>Shaurya Tyagi</h3>
+                        <span class="member-card__role">Presenter<br>Theme designer</span>
+
+                        <p>
+                            Helped communicate the project's ideas and progress through presentations.
+                            Contributed to the visual theme and reviewed written content to keep the
+                            project documentation clear and consistent.
+                        </p>
+
+                    </article>
+
+
+                    <article class="member-card reveal">
+                        <div class="member-card__top">
+                            <div class="avatar" aria-hidden="true">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="17" r="9"/>
+                                    <path d="M7 43c0-10 7-16 17-16s17 6 17 16"/>
+                                </svg>
+                            </div>
+                            <span class="member-card__number">04</span>
+                        </div>
+
+                        <h3>Anaya</h3>
+                        <span class="member-card__role">Presenter<br>Proof reader</span>
+
+                        <p>
+                            Supported the project's presentation and helped review its written
+                            material. Contributed to making the project's concepts easier to
+                            understand and its final showcase more organised.
+                        </p>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contributions -->
+        <section class="section contributions-section" id="contributions">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">BEHIND THE BUILD</span>
+                        <h2>Who built what.</h2>
+                    </div>
+
+                    <p>
+                        A breakdown of the work that went into
+                        bringing the project together.
+                    </p>
+                </div>
+
+                <div class="credits-list reveal">
+
+                    <div class="credit-row">
+                        <span class="credit-number">01</span>
+                        <h3>Hardware &amp; wiring</h3>
+                        <p>Mudit Mishra</p>
+                    </div>
+
+                    <div class="credit-row">
+                        <span class="credit-number">02</span>
+                        <h3>Arduino firmware</h3>
+                        <p>Mudit Mishra & Gunagya Singh</p>
+                    </div>
+
+                    <div class="credit-row">
+                        <span class="credit-number">03</span>
+                        <h3>Python / 3D software</h3>
+                        <p>Mudit Mishra & Gunagya Singh</p>
+                    </div>
+
+                    <div class="credit-row">
+                        <span class="credit-number">04</span>
+                        <h3>Design &amp; presentation</h3>
+                        <p>Shaurya Tyagi & Anaya</p>
+                    </div>
+
+                    <div class="credit-row">
+                        <span class="credit-number">05</span>
+                        <h3>Testing &amp; integration</h3>
+                        <p>Mudit Mishra & Gunagya Singh & Shaurya Tyagi</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Mentor -->
+        <section class="section mentor-section" id="mentors">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">GUIDANCE &amp; SUPPORT</span>
+                        <h2>Our mentor.</h2>
+                    </div>
+                </div>
+
+                <article class="mentor-card reveal">
+
+                    <div class="mentor-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="17" r="9"/>
+                            <path d="M7 43c0-10 7-16 17-16s17 6 17 16"/>
+                        </svg>
+                    </div>
+
+                    <div class="mentor-card__content">
+                        <span class="eyebrow">MENTOR / TEACHER</span>
+                        <h3>[Mentor Name]</h3>
+                        <span class="mentor-card__title">[Title / Designation]</span>
+
+                        <p>
+                            Thank you for [short thank-you message describing
+                            the guidance, support or encouragement provided].
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Special Thanks -->
+        <section class="section thanks-section" id="thanks">
+            <div class="container">
+
+                <div class="thanks-card reveal">
+                    <span class="eyebrow">BEYOND THE TEAM</span>
+                    <h2>It takes more than a team.</h2>
+
+                    <p>
+                        Special thanks to SR International School(our school)
+                        for their unwavering support and assistance.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+
+            <div class="footer__main">
+
+                <a href="#home" class="brand footer__brand">
+                    <img
+                        src="assets/arms.png"
+                        alt="Coding Club at SR International School logo"
+                        class="brand__logo"
+                    >
+                    <span>Coding Club at SR International School</span>
+                </a>
+
+                <p class="footer__school">
+                    Coding club at SR International School
+                </p>
+
+                <div class="footer__links">
+                    <a href="./index.html">[Link]</a>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <span>© 2026 Coding Club at SR International School</span>
+                <a href="#home">Back to top !</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
