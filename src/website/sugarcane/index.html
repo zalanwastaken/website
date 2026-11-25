@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya & Rohan | Wedding Invitation</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================
+   GLOBAL STYLES
+========================================= */
+
+        :root {
+            --maroon: #490d19;
+            --deep-maroon: #26060d;
+            --gold: #d6ad58;
+            --light-gold: #f4df9e;
+            --cream: #fff5dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--deep-maroon);
+            color: var(--cream);
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* =========================================
+   BACKGROUND
+========================================= */
+
+        .scene {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at center, #a64d23 0%, #5c1b19 42%, #20070d 100%);
+        }
+
+        .scene::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 50%, #ffc75b33, transparent 55%);
+            animation: ambientGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambientGlow {
+            from {
+                opacity: .5;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================
+   MANDAP
+========================================= */
+
+        .mandap {
+            position: absolute;
+            width: min(600px, 90vw);
+            height: 400px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .mandap.visible {
+            opacity: 1;
+        }
+
+        .canopy {
+            position: absolute;
+            top: 45px;
+            left: 8%;
+            width: 84%;
+            height: 90px;
+            background: linear-gradient(180deg, #e7bd62, #8e351c, #541018);
+            border: 4px solid var(--gold);
+            box-shadow: 0 0 35px #ffc75b77;
+        }
+
+        .canopy::after {
+            content: "✦  ❋  ✦  ❋  ✦  ❋  ✦";
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 25px;
+            color: var(--light-gold);
+            font-size: 25px;
+        }
+
+        .canopy::before {
+            content: "";
+            position: absolute;
+            left: -2px;
+            right: -2px;
+            bottom: -20px;
+            height: 20px;
+            background: repeating-linear-gradient(90deg,
+                    #d89b3f 0 18px,
+                    #8c2e1b 18px 36px);
+            clip-path: polygon(0 0, 100% 0, 100% 0,
+                    95% 100%, 90% 0, 85% 100%,
+                    80% 0, 75% 100%, 70% 0,
+                    65% 100%, 60% 0, 55% 100%,
+                    50% 0, 45% 100%, 40% 0,
+                    35% 100%, 30% 0, 25% 100%,
+                    20% 0, 15% 100%, 10% 0,
+                    5% 100%, 0 0);
+        }
+
+        .pillar {
+            position: absolute;
+            top: 130px;
+            height: 225px;
+            width: 34px;
+            background: linear-gradient(90deg,
+                    #773015,
+                    #f1c76d,
+                    #9a431f,
+                    #e4ae4f);
+            border: 2px solid #f3d58b;
+            box-shadow: 0 0 15px #ffb63a55;
+        }
+
+        .pillar::before,
+        .pillar::after {
+            content: "❋";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff0ad;
+            font-size: 20px;
+        }
+
+        .pillar::before {
+            top: 15px;
+        }
+
+        .pillar::after {
+            bottom: 15px;
+        }
+
+        .p1 {
+            left: 8%;
+        }
+
+        .p2 {
+            right: 8%;
+        }
+
+        .garland {
+            position: absolute;
+            top: 110px;
+            width: 12px;
+            height: 95px;
+            background: repeating-linear-gradient(180deg,
+                    #ffb52d 0 8px,
+                    #f4db4d 8px 16px,
+                    transparent 16px 20px);
+            border-radius: 50%;
+            filter: drop-shadow(0 0 5px #ffb32d);
+        }
+
+        .g1 {
+            left: 20%;
+        }
+
+        .g2 {
+            left: 38%;
+        }
+
+        .g3 {
+            right: 38%;
+        }
+
+        .g4 {
+            right: 20%;
+        }
+
+        .diya {
+            position: absolute;
+            bottom: 5px;
+            font-size: 35px;
+            animation: flicker .8s infinite alternate;
+            filter: drop-shadow(0 0 12px #ffb52d);
+        }
+
+        .d1 {
+            left: 20%;
+        }
+
+        .d2 {
+            left: 43%;
+        }
+
+        .d3 {
+            right: 43%;
+        }
+
+        .d4 {
+            right: 20%;
+        }
+
+        @keyframes flicker {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.12);
+                filter: drop-shadow(0 0 22px #ffcc48);
+            }
+        }
+
+        /* =========================================
+   ORNATE DOORS
+========================================= */
+
+        .doors {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            perspective: 1200px;
+            pointer-events: none;
+        }
+
+        .door {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            background:
+                repeating-linear-gradient(90deg,
+                    transparent 0 28px,
+                    #ffffff0b 29px 31px),
+                linear-gradient(90deg,
+                    #3c100c,
+                    #76291a,
+                    #43100d);
+            border: 8px solid #bd8b37;
+            box-shadow: inset 0 0 40px #1a0505;
+            pointer-events: auto;
+            transition: transform 2s cubic-bezier(.7, 0, .2, 1);
+        }
+
+        .door.left {
+            transform-origin: left center;
+            border-right: 4px solid var(--gold);
+        }
+
+        .door.right {
+            transform-origin: right center;
+            border-left: 4px solid var(--gold);
+        }
+
+        .doors.open .left {
+            transform: rotateY(-110deg);
+        }
+
+        .doors.open .right {
+            transform: rotateY(110deg);
+        }
+
+        .door::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border: 3px double var(--gold);
+            box-shadow:
+                inset 0 0 20px #d6ad5833,
+                0 0 10px #d6ad5833;
+        }
+
+        .door::after {
+            content: "❋\A ✦\A ❋\A ✦\A ❋";
+            white-space: pre;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--light-gold);
+            font-size: clamp(22px, 4vw, 45px);
+            line-height: 2;
+            text-shadow: 0 0 15px #ffd77c;
+        }
+
+        .knob {
+            position: absolute;
+            top: 52%;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff1aa, #ad7625 65%, #5e3710);
+            box-shadow: 0 0 12px #ffdc85;
+        }
+
+        .left .knob {
+            right: 12%;
+        }
+
+        .right .knob {
+            left: 12%;
+        }
+
+        .tap-hint {
+            position: absolute;
+            z-index: 12;
+            left: 50%;
+            top: 82%;
+            transform: translateX(-50%);
+            color: var(--light-gold);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            font-size: 13px;
+            text-shadow: 0 0 12px gold;
+            animation: pulse 1.4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            50% {
+                opacity: .35;
+            }
+        }
+
+        /* =========================================
+   INVITATION CARD
+========================================= */
+
+        .invitation {
+            position: relative;
+            z-index: 5;
+            width: min(440px, 90vw);
+            min-height: 600px;
+            margin: 40px auto;
+            padding: 35px 25px;
+            text-align: center;
+            color: var(--maroon);
+            background:
+                radial-gradient(circle at 10% 10%, #d6ad581c 0 3px, transparent 4px),
+                radial-gradient(circle at 90% 90%, #d6ad5820 0 3px, transparent 4px),
+                linear-gradient(145deg, #fff9e9, #f5e5c3);
+            border: 7px double var(--gold);
+            outline: 2px solid #f5d98c;
+            outline-offset: -14px;
+            box-shadow:
+                0 0 35px #ffbd5b55,
+                inset 0 0 45px #d6ad5833;
+            opacity: 0;
+            transform: translateY(100px) scale(.9);
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .invitation.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .invitation::before,
+        .invitation::after {
+            content: "❋";
+            position: absolute;
+            color: #bb852e;
+            font-size: 35px;
+        }
+
+        .invitation::before {
+            top: 5px;
+            left: 8px;
+        }
+
+        .invitation::after {
+            bottom: 5px;
+            right: 8px;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ganesh {
+            color: #a36b1d;
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .om {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .divider {
+            color: #bd8b37;
+            font-size: 24px;
+            margin: 16px 0;
+        }
+
+        .invite-text {
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.8;
+            color: #754331;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(43px, 10vw, 60px);
+            line-height: 1.3;
+            color: #761b29;
+            margin: 12px 0;
+            text-shadow: 1px 2px 2px #d6ad5855;
+        }
+
+        .ampersand {
+            display: block;
+            font-size: 30px;
+            color: #b58a42;
+        }
+
+        .details {
+            margin-top: 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            line-height: 2;
+            color: #5b2024;
+        }
+
+        .details strong {
+            color: #a26b24;
+        }
+
+        .blessing {
+            margin-top: 22px;
+            font-size: 14px;
+            font-style: italic;
+            color: #875b39;
+        }
+
+        .countdown {
+            margin-top: 20px;
+            padding: 12px;
+            border-top: 1px solid #c99d55;
+            border-bottom: 1px solid #c99d55;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            color: #7a3026;
+        }
+
+        .countdown strong {
+            display: block;
+            font-size: 15px;
+            margin-top: 6px;
+        }
+
+        .rsvp {
+            margin-top: 22px;
+            padding: 11px 32px;
+            background: linear-gradient(135deg, #8a2930, #4b0c19);
+            border: 1px solid #d5ad58;
+            color: #ffe7a8;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        .rsvp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px #741b2955;
+        }
+
+        /* =========================================
+   REPLAY BUTTON
+========================================= */
+
+        .replay {
+            position: relative;
+            z-index: 20;
+            display: block;
+            margin: 15px auto 30px;
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--light-gold);
+            border: 1px solid var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .replay:hover {
+            background: #d6ad5822;
+        }
+
+        /* =========================================
+   RSVP POPUP
+========================================= */
+
+        .popup {
+            position: fixed;
+            inset: 0;
+            z-index: 30;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: #120509bb;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup.show {
+            display: flex;
+        }
+
+        .popup-box {
+            width: min(320px, 85vw);
+            padding: 35px;
+            text-align: center;
+            color: var(--maroon);
+            background: var(--cream);
+            border: 4px double var(--gold);
+            animation: popIn .3s ease;
+        }
+
+        .popup-box h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .popup-box button {
+            margin-top: 20px;
+            padding: 8px 25px;
+            background: var(--maroon);
+            color: var(--cream);
+            border: 1px solid var(--gold);
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* =========================================
+   FALLING PETALS / SPARKLES
+========================================= */
+
+        .petal {
+            position: fixed;
+            top: -30px;
+            z-index: 3;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+   CAMERA ZOOM
+========================================= */
+
+        .scene.zoom {
+            transform: scale(1.12);
+            transition: transform 2s ease;
+        }
+
+        /* =========================================
+   RESPONSIVE
+========================================= */
+
+        @media (max-width: 480px) {
+            .invitation {
+                margin: 25px auto;
+                padding: 35px 20px;
+                min-height: 580px;
+            }
+
+            .mandap {
+                transform: translate(-50%, -50%) scale(.8);
+            }
+
+            .door {
+                border-width: 5px;
+            }
+
+            .tap-hint {
+                font-size: 10px;
+            }
+        }
+
+        body.intro .invitation,
+        body.intro .replay {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="intro">
+
+    <!-- =========================================
+     MANDAP BACKGROUND
+========================================= -->
+
+    <div class="scene" id="scene">
+        <div class="mandap" id="mandap">
+            <div class="canopy"></div>
+
+            <div class="pillar p1"></div>
+            <div class="pillar p2"></div>
+
+            <div class="garland g1"></div>
+            <div class="garland g2"></div>
+            <div class="garland g3"></div>
+            <div class="garland g4"></div>
+
+            <div class="diya d1">🪔</div>
+            <div class="diya d2">🪔</div>
+            <div class="diya d3">🪔</div>
+            <div class="diya d4">🪔</div>
+        </div>
+    </div>
+
+    <!-- =========================================
+     ORNATE DOORS
+========================================= -->
+
+    <div class="doors" id="doors">
+        <div class="door left">
+            <div class="knob"></div>
+        </div>
+
+        <div class="door right">
+            <div class="knob"></div>
+        </div>
+
+        <div class="tap-hint" id="tapHint">✦ TAP TO OPEN ✦</div>
+    </div>
+
+    <!-- =========================================
+     WEDDING INVITATION CARD
+========================================= -->
+
+    <main>
+        <section class="invitation" id="invitation">
+            <div class="card-content">
+
+                <div class="ganesh">
+                    <span class="om">ॐ</span>
+                    श्री गणेशाय नमः
+                </div>
+
+                <div class="divider">❋ ✦ ❋</div>
+
+                <p class="invite-text">
+                    With immense joy and blessings,<br>
+                    You are cordially invited to celebrate<br>
+                    the wedding of
+                </p>
+
+                <!--! EDIT NAMES HERE -->
+                <h1 class="names">
+                    Priya
+                    <span class="ampersand">&</span>
+                    Rohan
+                </h1>
+
+                <div class="divider">❋ ✦ ❋</div>
+
+                <!-- !EDIT WEDDING DETAILS HERE -->
+                <div class="details">
+                    <strong>THE WEDDING CEREMONY</strong><br>
+                    Saturday, 20 February 2027<br>
+                    7:00 PM onwards<br><br>
+
+                    <strong>VENUE</strong><br>
+                    The Royal Palace Gardens<br>
+                    Jaipur, Rajasthan
+                </div>
+
+                <p class="blessing">
+                    With blessings of our families
+                </p>
+
+                <!-- COUNTDOWN -->
+                <div class="countdown">
+                    ✦ COUNTDOWN TO FOREVER ✦
+                    <strong id="timer">Loading...</strong>
+                </div>
+
+                <button class="rsvp" onclick="showRSVP()">
+                    RSVP
+                </button>
+
+            </div>
+        </section>
+    </main>
+
+    <button class="replay" onclick="replayAnimation()">
+        ↻ REPLAY ANIMATION
+    </button>
+
+    <!-- =========================================
+     RSVP POPUP
+========================================= -->
+
+    <div class="popup" id="popup">
+        <div class="popup-box">
+            <h2>You're Invited!</h2>
+            <p>We would be delighted to celebrate this special day with you.</p>
+            <button onclick="closeRSVP()">Lovely!</button>
+        </div>
+    </div>
+
+    <!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+    <script>
+
+        // =========================================
+        // LANDING ANIMATION
+        // =========================================
+
+        const doors = document.getElementById("doors");
+        const mandap = document.getElementById("mandap");
+        const invitation = document.getElementById("invitation");
+        const scene = document.getElementById("scene");
+        const tapHint = document.getElementById("tapHint");
+
+        let animationStarted = false;
+        let animationTimers = [];
+
+        function clearAnimationTimers() {
+            animationTimers.forEach(clearTimeout);
+            animationTimers = [];
+        }
+
+        function schedule(callback, delay) {
+            animationTimers.push(setTimeout(callback, delay));
+        }
+
+        function startAnimation() {
+
+            if (animationStarted) return;
+
+            animationStarted = true;
+            tapHint.style.display = "none";
+
+            // Open doors
+            doors.classList.add("open");
+
+            // Reveal mandap
+            schedule(() => {
+                mandap.classList.add("visible");
+            }, 500);
+
+            // Camera zoom
+            schedule(() => {
+                scene.classList.add("zoom");
+            }, 1800);
+
+            // Hide mandap and show invitation
+            schedule(() => {
+                mandap.style.opacity = "0";
+                invitation.classList.add("show");
+                document.body.classList.remove("intro");
+            }, 2700);
+
+            // Start falling decorations
+            schedule(() => {
+                startPetals();
+            }, 3400);
+
+            // Remove doors from interaction
+            schedule(() => {
+                doors.style.pointerEvents = "none";
+            }, 2200);
+        }
+
+        // Open automatically after 1.5 seconds
+        const autoOpen = setTimeout(startAnimation, 1500);
+
+        // Allow clicking the doors to open early
+        doors.addEventListener("click", () => {
+            clearTimeout(autoOpen);
+            startAnimation();
+        });
+
+        // =========================================
+        // REPLAY ANIMATION
+        // =========================================
+
+        function replayAnimation() {
+
+            clearAnimationTimers();
+
+            animationStarted = false;
+
+            // Reset everything
+            doors.classList.remove("open");
+            doors.style.pointerEvents = "auto";
+
+            mandap.classList.remove("visible");
+            mandap.style.opacity = "";
+
+            scene.classList.remove("zoom");
+
+            invitation.classList.remove("show");
+            document.body.classList.add("intro");
+
+            tapHint.style.display = "block";
+
+            stopPetals();
+
+            // Restart sequence
+            clearTimeout(window.replayTimer);
+
+            window.replayTimer = setTimeout(startAnimation, 1500);
+
+        }
+
+        // =========================================
+        // RSVP POPUP
+        // =========================================
+
+        function showRSVP() {
+            document.getElementById("popup").classList.add("show");
+        }
+
+        function closeRSVP() {
+            document.getElementById("popup").classList.remove("show");
+        }
+
+        // Close popup by clicking outside
+        document.getElementById("popup").addEventListener("click", (e) => {
+            if (e.target.id === "popup") {
+                closeRSVP();
+            }
+        });
+
+        // =========================================
+        // COUNTDOWN TIMER
+        // =========================================
+
+        // EDIT THIS DATE TO MATCH THE WEDDING DATE
+        const weddingDate = new Date("2027-02-20T19:00:00+05:30").getTime(); //! DATE
+
+        function updateCountdown() {
+
+            const now = Date.now();
+            const difference = weddingDate - now;
+
+            const timer = document.getElementById("timer");
+
+            if (difference <= 0) {
+                timer.textContent = "The celebrations have begun! ❤️";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / (1000 * 60)) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            timer.textContent =
+                `${days} Days : ${hours} Hrs : ${minutes} Min : ${seconds} Sec`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // =========================================
+        // FALLING FLOWER PETALS
+        // =========================================
+
+        let petalInterval = null;
+
+        function startPetals() {
+
+            if (petalInterval) return;
+
+            const symbols = ["🌸", "🌼", "🌺", "✦", "✨"];
+
+            petalInterval = setInterval(() => {
+
+                const petal = document.createElement("div");
+
+                petal.className = "petal";
+                petal.textContent =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                petal.style.left = Math.random() * 100 + "vw";
+                petal.style.fontSize = (12 + Math.random() * 15) + "px";
+                petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+                petal.style.opacity = 0.5 + Math.random() * 0.5;
+
+                document.body.appendChild(petal);
+
+                setTimeout(() => petal.remove(), 10000);
+
+            }, 350);
+
+        }
+
+        function stopPetals() {
+            clearInterval(petalInterval);
+            petalInterval = null;
+
+            document.querySelectorAll(".petal").forEach(p => p.remove());
+        }
+
+    </script>
+
+</body>
+
+</html>
